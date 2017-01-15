@@ -9,6 +9,8 @@
           - wget
           - vim
           - unzip
-          - virtualbox-guest-dkms
-          - virtualbox-guest-additions-iso
-	  - xubuntu-desktop
+
+      - name: install xubuntu desktop
+        apt: name=xubuntu-desktop state=present
+        ignore_errors: yes
+        become: true
