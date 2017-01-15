@@ -1,0 +1,14 @@
+---
+  - hosts: all
+    tasks:
+      - name: install packages
+        apt: name={{ item }} state=present
+        become: true
+        with_items:
+          - curl
+          - wget
+          - vim
+          - unzip
+          - virtualbox-guest-dkms
+          - virtualbox-guest-additions-iso
+	  - xubuntu-desktop
